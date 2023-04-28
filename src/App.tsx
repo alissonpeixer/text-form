@@ -70,7 +70,7 @@ function App() {
             className='w-full min-h-[300px]  border rounded-md p-4'
             value={count}
             onChange={(e) => (setCount(e.target.value), isDigitando())}
-            onKeyDown={(e) => e.keyCode === 13 && setLines((prevOld): any => [count])}
+            onKeyDown={(e) => e.keyCode === 13 && setLines((): any => [count])}
             wrap="hard"
             placeholder='Resumo e solução'
           >
@@ -104,7 +104,7 @@ function App() {
           >Resumo e Solução</h3>
           {
             !digitando ?
-              lines?.map((item: string, id): any => (
+              lines?.map((item: string): any => (
                 item.split('\n').map((item, id) => <Li item={item} key={id} mark={mark} bold={bold} capitalizee={capitalizee} />)
               ))
               :
